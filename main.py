@@ -24,6 +24,8 @@ def main():
     elif user_input.lower() in ["bye", "good bye"]:
         say_jarvis("Good bye sir.")
         quit(0)
+    elif user_input.lower() in ["open vscode"]:
+        os.system("code")
     else:
         say_jarvis("I didn't understand")
 
