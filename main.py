@@ -1,7 +1,7 @@
-def say_user():
+def take_user_input():
     input("User: ")
     print()
-    
+
 def say_jarvis(message):
     print(f"Jarvis: {message}")  
     print()
@@ -9,7 +9,7 @@ def say_jarvis(message):
 def main(): 
     say_jarvis("Hello")
     say_jarvis("I'm currently busy! can we talk later?")
-    say_user()
+    take_user_input()
     say_jarvis("Bye, Thank you!")
 
 if __name__ == "__main__":
