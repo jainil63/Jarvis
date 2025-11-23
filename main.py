@@ -15,9 +15,12 @@ def main():
 
     say_jarvis("How can I help you?")
     user_input = take_user_input()
-    if user_input.lower() in ["Shutdown device", "shutdown pc"]:
+    if user_input.lower() in ["shutdown device", "shutdown pc"]:
         os.system("echo shutdown /s /t 0")
         return None
+    elif user_input.lower() in ["bye", "good bye"]:
+        say_jarvis("Good bye sir.")
+        quit(0)
     else:
         say_jarvis("I didn't understand")
 
