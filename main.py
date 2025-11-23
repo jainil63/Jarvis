@@ -1,4 +1,5 @@
 from utils import take_user_input, say_jarvis
+import os
 
 
 def main():
@@ -11,10 +12,16 @@ def main():
         say_jarvis("Oh, I feel bad by hearing that!")
     else:
         say_jarvis("Sorry, I didnt understand that!")
+
     say_jarvis("How can I help you?")
-    take_user_input()
-    say_jarvis("I didnt understand that!")
-    say_jarvis("Good bye, take care!")
+    user_input = take_user_input()
+    if user_input.lower() in ["Shutdown device", "shutdown pc"]:
+        os.system("echo shutdown /s /t 0")
+        return None
+    else:
+        say_jarvis("I didn't understand")
+
+    say_jarvis("Good bye!")
 
 
 if __name__ == "__main__":
