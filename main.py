@@ -18,6 +18,9 @@ def main():
     if user_input.lower() in ["shutdown device", "shutdown pc"]:
         os.system("echo shutdown /s /t 0")
         return None
+    elif user_input.lower() in ["restart", "restart pc"]:
+        os.system("echo shutdown /r /t 0")
+        return None
     elif user_input.lower() in ["bye", "good bye"]:
         say_jarvis("Good bye sir.")
         quit(0)
