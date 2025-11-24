@@ -1,0 +1,54 @@
+name: Build Jarvis
+
+on: workflow_dispatch
+
+jobs:
+  build_jarvis:
+    name: Smoke Test PyCrucible action
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # ----- Linux -----
+          - runner: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+            bin_ext: ""
+          # ----- Windows -----
+          - runner: windows-latest
+            target: x86_64-pc-windows-msvc
+            bin_ext: ".exe"
+    steps:
+      - name: Checkout Github Repository
+        uses: actions/checkout@v4
+      
+      - name: Build Jarvis (Linux and MacOS)
+        if: runner.os != 'Windows'
+        uses: razorblade23/pycrucible-action@v2
+        with:
+            entry: .
+            output: ./jarvis
+
+      - name: Build Jarvis (Windows)
+        if: runner.os == 'Windows'
+        uses: razorblade23/pycrucible-action@v2
+        with:
+            entry: .
+            output: .\jarvis.exe
+
+      - name: Upload Jarvis as Artifact (Linux and MacOS)
+        if: runner.os != 'Windows'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Jarvis-App
+          path: .\jarvis.exe
+          if-no-files-found: error
+
+      - name: Upload Jarvis as Artifact (Windows)
+        if: runner.os == 'Windows'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Jarvis-App
+          path: .\jarvis.exe
+          if-no-files-found: error
+  
