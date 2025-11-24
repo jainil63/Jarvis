@@ -35,35 +35,34 @@ def main():
     else:
         say_jarvis("Sorry, I didnt understand that!")
 
-    say_jarvis("How can I help you?")
+    while True:
+        say_jarvis("How can I help you?")
 
-    user_input = take_user_input()
+        user_input = take_user_input()
 
-    if user_input.lower() in ["shutdown device", "shutdown pc"]:
-        os.system("echo shutdown /s /t 0")
-        return None
+        if user_input.lower() in ["shutdown device", "shutdown pc"]:
+            os.system("echo shutdown /s /t 0")
+            return None
 
-    elif user_input.lower() in ["restart", "restart pc"]:
-        os.system("echo shutdown /r /t 0")
-        return None
+        elif user_input.lower() in ["restart", "restart pc"]:
+            os.system("echo shutdown /r /t 0")
+            return None
 
-    elif user_input.lower() in ["bye", "good bye"]:
-        say_jarvis("Good bye sir.")
-        quit(0)
+        elif user_input.lower() in ["open vscode"]:
+            os.system("code")
 
-    elif user_input.lower() in ["open vscode"]:
-        os.system("code")
+        elif user_input.lower() in ["open chrome"]:
+            os.startfile("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe")
 
-    elif user_input.lower() in ["open chrome"]:
-        os.startfile("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe")
+        elif user_input.lower() in ["open camera"]:
+            show_camera()
 
-    elif user_input.lower() in ["open camera"]:
-        show_camera()
+        elif user_input.lower() in ["bye", "good bye"]:
+            say_jarvis("Good bye sir.")
+            quit(0)
 
-    else:
-        say_jarvis("I didn't understand")
-
-    say_jarvis("Good bye!")
+        else:
+            say_jarvis("I didn't understand")
 
 
 if __name__ == "__main__":
