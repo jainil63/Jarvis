@@ -1,5 +1,6 @@
 from utils import take_user_input, say_jarvis
 import os
+import cv2
 
 
 def main():
@@ -28,6 +29,8 @@ def main():
         os.system("code")
     elif user_input.lower() in ["open chrome"]:
         os.startfile("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe")
+    elif user_input.lower() in ["open camera"]:
+        say_jarvis("Sorry, I can't access camera!")
     else:
         say_jarvis("I didn't understand")
 
