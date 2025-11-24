@@ -26,6 +26,8 @@ def main():
         quit(0)
     elif user_input.lower() in ["open vscode"]:
         os.system("code")
+    elif user_input.lower() in ["open chrome"]:
+        os.startfile("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe")
     else:
         say_jarvis("I didn't understand")
 
