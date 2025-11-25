@@ -22,26 +22,15 @@ jobs:
       - name: Checkout Github Repository
         uses: actions/checkout@v4
       
-      - name: Build Jarvis (Linux and MacOS)
-        if: runner.os != 'Windows'
+      - name: Build Jarvis
         uses: JeelDobariya38/pycrucible-action@main
         with:
             entry: .
             output: ./jarvis${{ matrix.bin_ext }}
 
-      - name: Upload Jarvis as Artifact (Linux and MacOS)
-        if: runner.os != 'Windows'
+      - name: Upload Jarvis as Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Jarvis-App-x86-64
-          path: ./jarvis
+          name: Jarvis-App-${{ matrix.runner.name }}-x86-64
+          path: ./jarvis${{ matrix.bin_ext }}
           if-no-files-found: error
-
-      - name: Upload Jarvis as Artifact (Windows)
-        if: runner.os == 'Windows'
-        uses: actions/upload-artifact@v4
-        with:
-          name: Jarvis-Windows-App-x86-64
-          path: .\jarvis
-          if-no-files-found: error
-  
