@@ -39,3 +39,9 @@ Click badge above or go [action](https://github.com/jainil63/Jarvis/actions) tab
   ```bash
   uv run ruff format .
   ```
+
+## Great Thank You
+
+A great thank you & shout out to [@razorblade23](https://github.com/razorblade23) for create [PyCrucible](https://github.com/razorblade23/PyCrucible).
+
+It help a lot in bundled the python app to an executable for convenience.
