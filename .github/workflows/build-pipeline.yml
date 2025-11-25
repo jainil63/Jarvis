@@ -24,14 +24,14 @@ jobs:
       
       - name: Build Jarvis (Linux and MacOS)
         if: runner.os != 'Windows'
-        uses: JeelDobariya38/pycrucible-action@v3
+        uses: JeelDobariya38/pycrucible-action/.github/actions/my-action@main
         with:
             entry: .
             output: ./jarvis
 
       - name: Build Jarvis (Windows)
         if: runner.os == 'Windows'
-        uses: JeelDobariya38/pycrucible-action@v3
+        uses: JeelDobariya38/pycrucible-action/.github/actions/my-action@main
         with:
             entry: .
             output: .\jarvis.exe
