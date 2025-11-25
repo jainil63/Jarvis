@@ -1,4 +1,4 @@
-name: Build Jarvis With Pycrucible
+name: Build Jarvis With Pycrucible (x86-64)
 
 on: workflow_dispatch
 
@@ -27,20 +27,13 @@ jobs:
         uses: JeelDobariya38/pycrucible-action@main
         with:
             entry: .
-            output: ./jarvis
-
-      - name: Build Jarvis (Windows)
-        if: runner.os == 'Windows'
-        uses: JeelDobariya38/pycrucible-action@main
-        with:
-            entry: .
-            output: .\jarvis.exe
+            output: ./jarvis${{ matrix.bin_ext }}
 
       - name: Upload Jarvis as Artifact (Linux and MacOS)
         if: runner.os != 'Windows'
         uses: actions/upload-artifact@v4
         with:
-          name: Jarvis-App
+          name: Jarvis-App-x86-64
           path: ./jarvis
           if-no-files-found: error
 
@@ -48,7 +41,7 @@ jobs:
         if: runner.os == 'Windows'
         uses: actions/upload-artifact@v4
         with:
-          name: Jarvis-Windows-App
-          path: .\jarvis.exe
+          name: Jarvis-Windows-App-x86-64
+          path: .\jarvis
           if-no-files-found: error
   
