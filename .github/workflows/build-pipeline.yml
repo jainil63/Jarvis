@@ -1,0 +1,36 @@
+name: Build Jarvis With Pycrucible (x86-64)
+
+on: workflow_dispatch
+
+jobs:
+  build_jarvis:
+    name: Build Jarvis
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # ----- Linux -----
+          - runner: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+            bin_ext: ""
+          # ----- Windows -----
+          - runner: windows-latest
+            target: x86_64-pc-windows-msvc
+            bin_ext: ".exe"
+    steps:
+      - name: Checkout Github Repository
+        uses: actions/checkout@v4
+      
+      - name: Build Jarvis
+        uses: razorblade23/pycrucible-action@latest
+        with:
+            entry: .
+            output: ./jarvis${{ matrix.bin_ext }}
+
+      - name: Upload Jarvis as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Jarvis-App-${{ runner.os }}-x86-64
+          path: ./jarvis${{ matrix.bin_ext }}
+          if-no-files-found: error
