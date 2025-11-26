@@ -1,24 +1,24 @@
-from utils import take_user_input, say_jarvis
+from utils import take_user_input, say_jarvis, engine
 from showcamera import show_camera
 import os
 
 
 def main():
-    say_jarvis("Hello, How are you?")
+    engine.say("Hello, How are you?")
 
     user_input = take_user_input().lower()
 
     if user_input in ["im fine", "all right", "nice", "fine"]:
-        say_jarvis("Oh, I feel happy by hearing that!")
+        engine.say("Oh, I feel happy by hearing that!")
 
     elif user_input in ["im not fine", "i feel bad", "im sick"]:
-        say_jarvis("Oh, I feel bad by hearing that!")
+        engine.say("Oh, I feel bad by hearing that!")
 
     else:
-        say_jarvis("Sorry, I didnt understand that!")
+        engine.say("Sorry, I didnt understand that!")
 
     while True:
-        say_jarvis("How can I help you?")
+        engine.say("How can I help you?")
 
         user_input = take_user_input().lower()
 
@@ -40,11 +40,11 @@ def main():
             show_camera()
 
         elif user_input in ["bye", "good bye"]:
-            say_jarvis("Good bye sir.")
+            engine.say("Good bye sir.")
             quit(0)
 
         else:
-            say_jarvis("I didn't understand")
+            engine.say("I didn't understand")
 
 
 if __name__ == "__main__":
