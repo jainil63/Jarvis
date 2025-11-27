@@ -1,8 +1,23 @@
 import pyttsx3
 import time
+import speech_recognition as sr
 
 engine = pyttsx3.init(driverName="sapi5")
 engine.runAndWait()
+r = sr.Recognizer()
+
+
+def take_voice_command():
+    with sr.Microphone() as source:
+        print("listning...")
+        audio = r.listen(source, timeout=5)
+        print("recognize...")
+        command = r.recognize_google(audio)
+        try:
+            print(command)
+        except Exception as e:
+            print(e)
+    return command
 
 
 def send_audio(message):
@@ -14,7 +29,8 @@ def send_audio(message):
 
 
 def take_user_input():
-    x = input("User: ")
+    print("User:")
+    x = take_voice_command()
     print()
     return x
 
