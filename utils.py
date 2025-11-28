@@ -1,6 +1,7 @@
 import pyttsx3
 import time
 import speech_recognition as sr
+import datetime
 
 engine = pyttsx3.init(driverName="sapi5")
 engine.runAndWait()
@@ -40,3 +41,14 @@ def say_jarvis(message):
     send_audio(message)
     print(message)
     print()
+
+
+def wish():
+    current_hour = datetime.datetime.now().hour
+
+    if 5 <= current_hour < 11:
+        say_jarvis("Good morning sir")
+    elif 11 <= current_hour < 17:
+        say_jarvis("Good afternoon sir")
+    else:
+        say_jarvis("good evening sir")

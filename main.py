@@ -1,17 +1,16 @@
-from utils import take_user_input, say_jarvis
+from utils import take_user_input, say_jarvis, wish
 from showcamera import show_camera
 import os
 
 
 def main():
-    say_jarvis("Hello, How are you?")
-
+    say_jarvis("Im jarvis, how are you sir!")
     user_input = take_user_input().lower()
 
-    if user_input in ["im fine", "all right", "nice", "fine"]:
+    if user_input in ["i am fine", "all right", "nice", "fine"]:
         say_jarvis("Oh, I feel happy by hearing that!")
 
-    elif user_input in ["im not fine", "i feel bad", "im sick"]:
+    elif user_input in ["i am not fine", "i feel bad", "im sick"]:
         say_jarvis("Oh, I feel bad by hearing that!")
 
     else:
@@ -48,4 +47,5 @@ def main():
 
 
 if __name__ == "__main__":
+    wish()
     main()
