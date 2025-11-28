@@ -13,6 +13,18 @@ It's an Digital AI Assistant made in python. That can help you do your daily tas
 >
 > we might also, later provide support for open ai sdk & docker... so we got you cover, **"AI Nerd"**...
 
+## Teacher Note
+
+If, you are a teacher then, the work submitted to the institution can be found at git commit history. [df443dc](https://github.com/jainil63/Jarvis/tree/df443dcfffe5a8e48b8e4273812bf8ebfff6ecd8)
+
+```powershell
+git checkout df443dc
+```
+
+```powershell
+git switch ~
+```
+
 ## Getting Started
 
 [![Build Jarvis With Pycrucible (x86-64)](https://github.com/jainil63/Jarvis/actions/workflows/build-pipeline.yml/badge.svg)](https://github.com/jainil63/Jarvis/actions/workflows/build-pipeline.yml)
@@ -42,6 +54,6 @@ Click badge above or go [action](https://github.com/jainil63/Jarvis/actions) tab
 
 ## Great Thank You
 
-A great thank you & shout out to [@razorblade23](https://github.com/razorblade23) for create [PyCrucible](https://github.com/razorblade23/PyCrucible).
+A great thank you & shout out to [@razorblade23](https://github.com/razorblade23) for creating [PyCrucible](https://github.com/razorblade23/PyCrucible).
 
-It help a lot in bundled the python app to an executable for convenience.
+It help a lot in bundling the python app to an executable for convenience.
