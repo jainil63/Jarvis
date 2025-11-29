@@ -1,11 +1,14 @@
+from dotenv import load_dotenv
 import pyttsx3
 import time
 import speech_recognition as sr
 import datetime
+import os
 
 engine = pyttsx3.init(driverName="sapi5")
 engine.runAndWait()
 r = sr.Recognizer()
+load_dotenv()
 
 
 def take_voice_command():
@@ -52,3 +55,11 @@ def wish():
         say_jarvis("Good afternoon sir")
     else:
         say_jarvis("good evening sir")
+
+
+def open_chrome():
+    chrome_path = os.getenv("CHROME_PATH")
+    if chrome_path:
+        os.startfile(chrome_path)
+    else:
+        say_jarvis("I can't open chrome")

@@ -1,6 +1,7 @@
-from utils import take_user_input, say_jarvis, wish
+from utils import take_user_input, say_jarvis, wish, open_chrome
 from showcamera import show_camera
 import os
+import webbrowser
 
 
 def main():
@@ -22,18 +23,21 @@ def main():
         user_input = take_user_input().lower()
 
         if user_input in ["shutdown device", "shutdown pc"]:
-            os.system("echo shutdown /s /t 0")
+            os.system("shutdown /s /t 0")
             return None
 
         elif user_input in ["restart", "restart pc"]:
-            os.system("echo shutdown /r /t 0")
+            os.system("shutdown /r /t 0")
             return None
 
         elif user_input in ["open vscode"]:
             os.system("code")
 
         elif user_input in ["open chrome"]:
-            os.startfile("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe")
+            open_chrome()
+
+        elif user_input in ["open youtube"]:
+            webbrowser.open_new_tab("https://www.youtube.com")
 
         elif user_input in ["open camera"]:
             show_camera()

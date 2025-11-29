@@ -40,6 +40,11 @@ Click badge above or go [action](https://github.com/jainil63/Jarvis/actions) tab
   git clone https://github.com/jainil63/Jarvis.git
   ```
 
+- Make a env file
+  ```bash
+  CHROME_PATH = 
+  ```
+
 - For run the app.
   ```bash
   uv run python main.py
