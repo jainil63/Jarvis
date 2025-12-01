@@ -1,10 +1,10 @@
-from utils import take_user_input, say_jarvis, wish, open_chrome
-from showcamera import show_camera
-import os
-import webbrowser
+from utils import take_user_input, say_jarvis, wish
+from activity import activity
 
 
 def main():
+    wish()
+
     say_jarvis("Im jarvis, how are you sir!")
     user_input = take_user_input().lower()
 
@@ -19,37 +19,8 @@ def main():
 
     say_jarvis("How can I help you?")
 
-    while True:
-        user_input = take_user_input().lower()
-
-        if user_input in ["shutdown device", "shutdown pc"]:
-            os.system("shutdown /s /t 0")
-            return None
-
-        elif user_input in ["restart", "restart pc"]:
-            os.system("shutdown /r /t 0")
-            return None
-
-        elif user_input in ["open vscode"]:
-            os.system("code")
-
-        elif user_input in ["open chrome"]:
-            open_chrome()
-
-        elif user_input in ["open youtube"]:
-            webbrowser.open_new_tab("https://www.youtube.com")
-
-        elif user_input in ["open camera"]:
-            show_camera()
-
-        elif user_input in ["bye", "good bye"]:
-            say_jarvis("Good bye sir.")
-            quit(0)
-
-        else:
-            say_jarvis("Say again please!")
+    activity()
 
 
 if __name__ == "__main__":
-    wish()
     main()
