@@ -57,8 +57,8 @@ Click badge above or go [action](https://github.com/jainil63/Jarvis/actions) tab
   uv run ruff format .
   ```
 
-## Great Thank You
+## Great Thank You 
 
-A great thank you & shout out to [@razorblade23](https://github.com/razorblade23) for creating [PyCrucible](https://github.com/razorblade23/PyCrucible).
+A great thank you & shout out to [@razorblade23](https://github.com/razorblade23) for creating [PyCrucible](https://github.com/razorblade23/PyCrucible). It help a lot in bundling the python app to an executable for convenience.
 
-It help a lot in bundling the python app to an executable for convenience.
+Also great thank you to [@JeelDobariya38](https://github.com/JeelDobariya38) for guide me to improve my code quality and for suggesting newer ideas for this project.
